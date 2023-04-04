@@ -8,8 +8,9 @@ public class IndexOfTheFirstOccurrence {
 
     /**
      * 0 ms.
+     *
      * @param haystack haystack string.
-     * @param needle needle string.
+     * @param needle   needle string.
      * @return index of the first occurrence.
      */
     public int strStr(String haystack, String needle) {
@@ -17,9 +18,10 @@ public class IndexOfTheFirstOccurrence {
     }
 
     /**
-     * 4 ms.
+     * 0 ms.
+     *
      * @param haystack haystack string.
-     * @param needle needle string.
+     * @param needle   needle string.
      * @return index of the first occurrence.
      */
     public int strStr2(String haystack, String needle) {
@@ -30,13 +32,12 @@ public class IndexOfTheFirstOccurrence {
         }
 
         for (int i = 0; i <= hayLen - needleLen; i++) {
-            int temp = 0;
-            for (int j = 0; j < needleLen; j++) {
-                if (haystack.charAt(i + j) == needle.charAt(j)) {
-                    temp++;
-                }
+            int j = 0;
+            while (j < needleLen && haystack.charAt(i + j) == needle.charAt(j)) {
+                ++j;
             }
-            if (temp == needleLen) {
+
+            if (j == needleLen) {
                 return i;
             }
         }
