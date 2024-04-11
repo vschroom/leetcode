@@ -1,4 +1,4 @@
-package ru.chernov.easy;
+package ru.chernov.slidingwindow.easy;
 
 import org.junit.jupiter.api.Test;
 
