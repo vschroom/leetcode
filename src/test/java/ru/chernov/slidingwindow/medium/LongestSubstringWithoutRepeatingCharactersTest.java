@@ -1,7 +1,7 @@
-package ru.chernov.slidingwindow.easy;
+package ru.chernov.slidingwindow.medium;
 
 import org.junit.jupiter.api.Test;
-import ru.chernov.slidingwindow.medium.LongestSubstringWithoutRepeatingCharacters;
+import ru.chernov.algthms.slidingwindow.medium.LongestSubstringWithoutRepeatingCharacters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

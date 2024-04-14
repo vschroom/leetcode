@@ -1,4 +1,4 @@
-package ru.chernov.slidingwindow.medium;
+package ru.chernov.algthms.slidingwindow.medium;
 
 import java.util.HashMap;
 import java.util.Map;

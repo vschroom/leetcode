@@ -1,6 +1,7 @@
 package ru.chernov.slidingwindow.easy;
 
 import org.junit.jupiter.api.Test;
+import ru.chernov.algthms.slidingwindow.easy.BestTimeToBuyAndSellStock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
