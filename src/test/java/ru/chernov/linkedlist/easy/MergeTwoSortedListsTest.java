@@ -1,7 +1,8 @@
-package ru.chernov.easy;
+package ru.chernov.linkedlist.easy;
 
 import org.junit.jupiter.api.Test;
-import ru.chernov.easy.MergeTwoSortedLists.ListNode;
+import ru.chernov.algthms.linkedlist.easy.MergeTwoSortedLists;
+import ru.chernov.algthms.linkedlist.easy.MergeTwoSortedLists.ListNode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -56,7 +57,7 @@ class MergeTwoSortedListsTest {
         var list1 = listNode(1, listNode(3, listNode(5, listNode(8, null))));
         var list2 = listNode(2, listNode(3, listNode(4, listNode(10, null))));
 
-        var result = mergeTwoSortedLists.mergeTwoLists2(list1, list2);
+        var result = mergeTwoSortedLists.mergeTwoLists(list1, list2);
 
         assertEquals(1, result.val);
         assertEquals(2, result.next.val);
@@ -73,7 +74,7 @@ class MergeTwoSortedListsTest {
         var list1 = listNode(2);
         var list2 = listNode(1);
 
-        var result = mergeTwoSortedLists.mergeTwoLists2(list1, list2);
+        var result = mergeTwoSortedLists.mergeTwoLists(list1, list2);
 
         assertEquals(1, result.val);
         assertEquals(2, result.next.val);
@@ -84,7 +85,7 @@ class MergeTwoSortedListsTest {
         var list1 = listNode(1, listNode(3, listNode(5, listNode(8, null))));
         var list2 = listNode(6);
 
-        var result = mergeTwoSortedLists.mergeTwoLists2(list1, list2);
+        var result = mergeTwoSortedLists.mergeTwoLists(list1, list2);
 
         assertEquals(1, result.val);
         assertEquals(3, result.next.val);
