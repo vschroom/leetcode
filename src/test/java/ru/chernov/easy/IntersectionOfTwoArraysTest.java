@@ -1,8 +1,7 @@
-package ru.chernov.binarysearch;
+package ru.chernov.easy;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.chernov.easy.IntersectionOfTwoArrays;
 
 class IntersectionOfTwoArraysTest {
 
