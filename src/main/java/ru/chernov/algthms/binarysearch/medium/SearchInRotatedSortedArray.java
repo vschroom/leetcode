@@ -10,20 +10,13 @@ public class SearchInRotatedSortedArray {
             int mid = lo + (hi - lo) / 2;
             if (nums[mid] == target) {
                 return mid;
-            } else if (nums[lo] == target) {
-                return lo;
-            } else if (nums[hi] == target) {
-                return hi;
-            } else if (nums[hi] < nums[mid] && target < nums[hi]) {
-                lo = mid + 1;
-            } else if (nums[lo] > nums[mid] && target > nums[lo]) {
+            } else if (nums[lo] > nums[hi]) {
+                if (nums[lo] == target) return lo;
+                lo = lo + 1;
+            } else if (nums[mid] > target) {
                 hi = mid - 1;
             } else {
-                if (nums[mid] > target) {
-                    hi = mid - 1;
-                } else {
-                    lo = mid + 1;
-                }
+                lo = mid + 1;
             }
         }
 
