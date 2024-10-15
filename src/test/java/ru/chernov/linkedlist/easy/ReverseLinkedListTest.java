@@ -3,7 +3,7 @@ package ru.chernov.linkedlist.easy;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.chernov.algthms.linkedlist.easy.ReverseLinkedList;
-import ru.chernov.algthms.linkedlist.easy.ReverseLinkedList.ListNode;
+import ru.chernov.algthms.linkedlist.easy.model.ListNode;
 
 class ReverseLinkedListTest {
 

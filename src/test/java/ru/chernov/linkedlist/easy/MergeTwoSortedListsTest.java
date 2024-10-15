@@ -2,7 +2,7 @@ package ru.chernov.linkedlist.easy;
 
 import org.junit.jupiter.api.Test;
 import ru.chernov.algthms.linkedlist.easy.MergeTwoSortedLists;
-import ru.chernov.algthms.linkedlist.easy.MergeTwoSortedLists.ListNode;
+import ru.chernov.algthms.linkedlist.easy.model.ListNode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

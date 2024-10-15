@@ -1,5 +1,7 @@
 package ru.chernov.algthms.linkedlist.easy;
 
+import ru.chernov.algthms.linkedlist.easy.model.ListNode;
+
 public class MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
@@ -26,20 +28,5 @@ public class MergeTwoSortedLists {
         }
 
         return copyHead.next;
-    }
-
-    public static class ListNode {
-        public int val;
-        public ListNode next;
-        ListNode() {
-        }
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 }

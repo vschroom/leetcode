@@ -1,7 +1,8 @@
 package ru.chernov.algthms.linkedlist.easy;
 
+import ru.chernov.algthms.linkedlist.easy.model.ListNode;
+
 import java.util.ArrayDeque;
-import java.util.Objects;
 
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
@@ -29,28 +30,5 @@ public class ReverseLinkedList {
         }
 
         return result;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            ListNode listNode = (ListNode) o;
-            return val == listNode.val && Objects.equals(next, listNode.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(val, next);
-        }
     }
 }
