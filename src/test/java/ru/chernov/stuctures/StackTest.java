@@ -49,11 +49,16 @@ class StackTest {
         stack.push(1);
         System.out.println(stack);
 
-//        stack.push(54);
-//        stack.push(65);
-//        stack.push(454);
-//        stack.push(543);
+        stack.push(54);
+        stack.push(null);
+        stack.push(454);
+        stack.push(543);
+//        stack.push(43);
         stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+//        stack.pop();
 
         Iterator<Integer> it = stack.iterator();
         while (it.hasNext()) {

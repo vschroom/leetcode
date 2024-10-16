@@ -8,7 +8,7 @@ public class CircularArrayStack<T> implements Iterable<T> {
 
     Object[] buffer;
     int size;
-    int pointer = -1;
+    int pointer;
 
     public CircularArrayStack(int size) {
         this.size = size;
@@ -19,31 +19,32 @@ public class CircularArrayStack<T> implements Iterable<T> {
         if (pointer == size) {
             throw new IllegalStateException("stack size is over");
         }
-        int inc = ++pointer;
-        buffer[inc % size] = el;
+        buffer[pointer % size] = el;
+        pointer += 1;
     }
 
     public T pop() {
-        if (pointer < 0) {
+        if (pointer == 0) {
             throw new IllegalStateException("stack is empty");
         }
+
+        pointer -= 1;
         T retVal = (T) buffer[pointer];
         buffer[pointer] = null;
-        pointer--;
 
         return retVal;
     }
 
     public T peek() {
-        return (T) buffer[pointer];
+        return (T) buffer[pointer - 1];
     }
 
     public int size() {
-        return this.pointer + 1;
+        return this.pointer;
     }
 
     public boolean isEmpty() {
-        return this.pointer == -1;
+        return this.pointer == 0;
     }
 
     @Override
@@ -53,17 +54,17 @@ public class CircularArrayStack<T> implements Iterable<T> {
 
     private class CircularArrayStackItr implements Iterator<T> {
 
-        int curPointer = -1;
+        int curPointer = 0;
 
         @Override
         public boolean hasNext() {
-            return curPointer + 1 != size && buffer[curPointer + 1] != null;
+            return curPointer < pointer;
         }
 
         @Override
         public T next() {
-            curPointer += 1;
             var curValue = buffer[curPointer];
+            curPointer += 1;
 
             return (T) curValue;
         }
