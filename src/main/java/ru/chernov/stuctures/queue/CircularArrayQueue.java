@@ -1,9 +1,10 @@
 package ru.chernov.stuctures.queue;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
-public class CircularArrayQueue<T> {
+public class CircularArrayQueue<T> implements Iterable<T> {
 
     Object[] buffer;
     int size;
@@ -44,8 +45,25 @@ public class CircularArrayQueue<T> {
         return Math.abs(leftPointer - rightPointer);
     }
 
-    public boolean isEmpty() {
-        return rightPointer > leftPointer;
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+
+            int curPointer = rightPointer;
+
+            @Override
+            public boolean hasNext() {
+                return curPointer + 1 <= leftPointer;
+            }
+
+            @Override
+            public T next() {
+                var retVal = (T) buffer[curPointer % size];
+                curPointer += 1;
+
+                return retVal;
+            }
+        };
     }
 
     @Override

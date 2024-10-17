@@ -56,7 +56,6 @@ class QueueTest {
 
         System.out.println("s: " + queue.size());
 
-        System.out.println(queue.isEmpty());
         queue.push(132);
         System.out.println(queue);
         for (int i = 0; i < 15; i++) {
@@ -74,9 +73,9 @@ class QueueTest {
             System.out.println(queue.pop());
         }
         System.out.println(queue);
-        /*Iterator<Integer> it = queue.iterator();
+        Iterator<Integer> it = queue.iterator();
         while (it.hasNext()) {
             System.out.println("peek: " + it.next());
-        }*/
+        }
     }
 }
