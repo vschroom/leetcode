@@ -7,13 +7,13 @@ import java.util.Iterator;
 public class CircularArrayQueue<T> implements Iterable<T> {
 
     Object[] buffer;
-    int size;
+    int capacity;
     int leftPointer;
     int rightPointer;
 
-    public CircularArrayQueue(int size) {
-        this.size = size;
-        this.buffer = new Object[size];
+    public CircularArrayQueue(int capacity) {
+        this.capacity = capacity;
+        this.buffer = new Object[capacity];
     }
 
     public void push(T value) {
@@ -21,7 +21,7 @@ public class CircularArrayQueue<T> implements Iterable<T> {
             throw new IllegalStateException("Queue size is over");
         }
 
-        buffer[leftPointer % size] = value;
+        buffer[leftPointer % capacity] = value;
         leftPointer += 1;
     }
 
@@ -30,15 +30,15 @@ public class CircularArrayQueue<T> implements Iterable<T> {
             throw new IllegalStateException("Queue is over");
         }
 
-        var retVal = (T) buffer[rightPointer % size];
-        buffer[rightPointer % size] = null;
+        var retVal = (T) buffer[rightPointer % capacity];
+        buffer[rightPointer % capacity] = null;
         rightPointer += 1;
 
         return retVal;
     }
 
     public T peek() {
-        return (T) buffer[rightPointer % size];
+        return (T) buffer[rightPointer % capacity];
     }
 
     public int size() {
@@ -58,7 +58,7 @@ public class CircularArrayQueue<T> implements Iterable<T> {
 
             @Override
             public T next() {
-                var retVal = (T) buffer[curPointer % size];
+                var retVal = (T) buffer[curPointer % capacity];
                 curPointer += 1;
 
                 return retVal;
@@ -70,7 +70,7 @@ public class CircularArrayQueue<T> implements Iterable<T> {
     public String toString() {
         return "CircularArrayQueue{" +
                 "buffer=" + Arrays.toString(buffer) +
-                ", size=" + size +
+                ", size=" + capacity +
                 ", leftPointer=" + leftPointer +
                 ", rightPointer=" + rightPointer +
                 '}';
