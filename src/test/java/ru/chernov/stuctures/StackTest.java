@@ -90,6 +90,10 @@ class StackTest {
         System.out.println("size: " + stack.size());
 
 //        stack.pop();
+
+        for (int i = 0; i < 15; i++) {
+            stack.push(i);
+        }
         Iterator<Integer> it = stack.iterator();
         while (it.hasNext()) {
             System.out.printf(it.next() + " ");

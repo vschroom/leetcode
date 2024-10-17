@@ -1,15 +1,16 @@
-package ru.chernov.stuctures.stack;
+package ru.chernov.stuctures.queue;
 
 import java.util.Iterator;
 
-public class CustomStack<T> implements Iterable<T> {
+public class CustomQueue<T> implements Iterable<T> {
 
     final Node tailNode = new Node();
+
     final Node headNode = new Node();
 
     int elementCount;
 
-    public CustomStack() {
+    public CustomQueue() {
         headNode.prev = tailNode;
         tailNode.next = headNode;
     }
@@ -25,31 +26,26 @@ public class CustomStack<T> implements Iterable<T> {
 
     public T pop() {
         if (elementCount == 0) {
-            throw new IllegalStateException("Stack is over");
+            throw new IllegalStateException("Queue is over");
         }
 
-        Node firstNode = headNode.prev;
-        headNode.prev = firstNode.prev;
-        firstNode.prev.next = headNode;
+        Node lastNode = tailNode.next;
+        tailNode.next = lastNode.next;
+        lastNode.next.prev = tailNode;
 
-        firstNode.prev = null;
-        firstNode.next = null;
+        lastNode.prev = null;
+        lastNode.next = null;
 
         elementCount--;
 
-        return firstNode.value;
+        return lastNode.value;
     }
 
     public T peek() {
-        return headNode.prev.value;
+        return tailNode.next.value;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return new CustomStackIterator();
-    }
-
-    public long size() {
+    public int size() {
         return elementCount;
     }
 
@@ -57,21 +53,26 @@ public class CustomStack<T> implements Iterable<T> {
         return elementCount == 0;
     }
 
-    private class CustomStackIterator implements Iterator<T> {
+    @Override
+    public Iterator<T> iterator() {
+        return new CustomQueueItr();
+    }
 
-        private Node currentNode = headNode;
+    private class CustomQueueItr implements Iterator<T> {
+
+        private Node currentNode = tailNode;
 
         @Override
         public boolean hasNext() {
-            return currentNode.prev != tailNode;
+            return currentNode.next != headNode;
         }
 
         @Override
         public T next() {
-            var cur = currentNode.prev;
-            currentNode = cur;
+            var next = currentNode.next;
+            currentNode = next;
 
-            return cur.value;
+            return next.value;
         }
     }
 

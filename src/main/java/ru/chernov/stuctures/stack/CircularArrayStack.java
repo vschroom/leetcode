@@ -29,8 +29,8 @@ public class CircularArrayStack<T> implements Iterable<T> {
         }
 
         pointer -= 1;
-        T retVal = (T) buffer[pointer];
-        buffer[pointer] = null;
+        T retVal = (T) buffer[pointer % size];
+        buffer[pointer % size] = null;
 
         return retVal;
     }
