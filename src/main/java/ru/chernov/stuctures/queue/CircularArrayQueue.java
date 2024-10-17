@@ -53,7 +53,7 @@ public class CircularArrayQueue<T> implements Iterable<T> {
 
             @Override
             public boolean hasNext() {
-                return curPointer + 1 <= leftPointer;
+                return curPointer < leftPointer;
             }
 
             @Override
