@@ -1,4 +1,4 @@
-package ru.chernov.algthms.hashmap;
+package ru.chernov.algthms.hashmap.eazy;
 
 import java.util.HashSet;
 

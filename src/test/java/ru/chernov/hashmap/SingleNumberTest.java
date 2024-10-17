@@ -2,7 +2,7 @@ package ru.chernov.hashmap;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.chernov.algthms.hashmap.SingleNumber;
+import ru.chernov.algthms.hashmap.eazy.SingleNumber;
 
 class SingleNumberTest {
 
