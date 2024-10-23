@@ -56,10 +56,11 @@ class QueueTest {
 
         System.out.println("s: " + queue.size());
 
+        System.out.println(queue.pop());
         queue.push(132);
         System.out.println(queue);
         for (int i = 0; i < 15; i++) {
-            queue.pop();
+            System.out.println(queue.pop());
         }
         System.out.println("s: " + queue.size());
 

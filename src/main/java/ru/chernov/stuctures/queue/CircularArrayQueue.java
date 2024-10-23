@@ -8,8 +8,9 @@ public class CircularArrayQueue<T> implements Iterable<T> {
 
     Object[] buffer;
     int capacity;
-    int leftPointer;
-    int rightPointer;
+    int tailPointer;
+    int headPointer;
+    int size;
 
     public CircularArrayQueue(int capacity) {
         this.capacity = capacity;
@@ -17,43 +18,45 @@ public class CircularArrayQueue<T> implements Iterable<T> {
     }
 
     public void push(T value) {
-        if (leftPointer < rightPointer) {
+        if (size == capacity) {
             throw new IllegalStateException("Queue size is over");
         }
 
-        buffer[leftPointer % capacity] = value;
-        leftPointer += 1;
+        buffer[tailPointer % capacity] = value;
+        tailPointer += 1;
+        size += 1;
     }
 
     public T pop() {
-        if (rightPointer >= leftPointer) {
+        if (size == 0) {
             throw new IllegalStateException("Queue is over");
         }
 
-        var retVal = (T) buffer[rightPointer % capacity];
-        buffer[rightPointer % capacity] = null;
-        rightPointer += 1;
+        var retVal = (T) buffer[headPointer % capacity];
+        buffer[headPointer % capacity] = null;
+        headPointer += 1;
+        size -= 1;
 
         return retVal;
     }
 
     public T peek() {
-        return (T) buffer[rightPointer % capacity];
+        return (T) buffer[headPointer % capacity];
     }
 
     public int size() {
-        return Math.abs(leftPointer - rightPointer);
+        return size - 1;
     }
 
     @Override
     public Iterator<T> iterator() {
         return new Iterator<>() {
 
-            int curPointer = rightPointer;
+            int curPointer = headPointer;
 
             @Override
             public boolean hasNext() {
-                return curPointer < leftPointer;
+                return curPointer < tailPointer;
             }
 
             @Override
@@ -71,8 +74,8 @@ public class CircularArrayQueue<T> implements Iterable<T> {
         return "CircularArrayQueue{" +
                 "buffer=" + Arrays.toString(buffer) +
                 ", size=" + capacity +
-                ", leftPointer=" + leftPointer +
-                ", rightPointer=" + rightPointer +
+                ", leftPointer=" + tailPointer +
+                ", rightPointer=" + headPointer +
                 '}';
     }
 }
