@@ -1,4 +1,6 @@
-package ru.chernov.algthms.tree;
+package ru.chernov.algthms.tree.eazy;
+
+import ru.chernov.algthms.tree.TreeNode;
 
 public class SameTree {
 

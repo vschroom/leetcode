@@ -2,7 +2,7 @@ package ru.chernov.tree;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.chernov.algthms.tree.SameTree;
+import ru.chernov.algthms.tree.eazy.SameTree;
 import ru.chernov.algthms.tree.TreeNode;
 
 class SameTreeTest {
