@@ -2,7 +2,7 @@ package ru.chernov.twopointers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.chernov.algthms.twopointers.ContainerWithMostWater;
+import ru.chernov.algthms.twopointers.medium.ContainerWithMostWater;
 
 class ContainerWithMostWaterTest {
 

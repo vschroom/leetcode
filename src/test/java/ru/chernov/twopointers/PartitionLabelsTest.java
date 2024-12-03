@@ -2,7 +2,7 @@ package ru.chernov.twopointers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.chernov.algthms.twopointers.PartitionLabels;
+import ru.chernov.algthms.twopointers.medium.PartitionLabels;
 
 import java.util.List;
 

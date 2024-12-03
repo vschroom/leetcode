@@ -1,4 +1,4 @@
-package ru.chernov.algthms.twopointers;
+package ru.chernov.algthms.twopointers.medium;
 
 public class ContainerWithMostWater {
 

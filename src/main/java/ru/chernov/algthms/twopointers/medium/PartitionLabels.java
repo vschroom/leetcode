@@ -1,4 +1,4 @@
-package ru.chernov.algthms.twopointers;
+package ru.chernov.algthms.twopointers.medium;
 
 import java.util.ArrayList;
 import java.util.HashMap;
